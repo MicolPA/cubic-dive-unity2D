@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip tapSound;
+    public GameObject canvaCredit;
     
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,14 @@ public class MenuManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         Debug.Log("AQUI");
 
+    }
+
+    public void ShowCredit(){
+        canvaCredit.SetActive(true);
+    }
+
+    public void HideCredit(){
+        canvaCredit.SetActive(false);
     }
 
 }

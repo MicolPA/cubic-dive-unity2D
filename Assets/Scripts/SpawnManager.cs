@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
         Debug.Log(clonePrefab[0].tag);
 
         if(clonePrefab[0].tag == "Platform"){
-            repeatRate = GameManagerObj.GetComponent<GameManager>().platformSpeed * 2;
+            repeatRate = GameManagerObj.GetComponent<GameManager>().platformSpeed + 0.5f;
             repeatRate = repeatRate >= 6 ? 4.5f : repeatRate;   
         }
 

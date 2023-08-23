@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public float platformSpeed = 0.6f;
     public float cloudSpeed = 1.0f;
+    public float speedLimit = 2.5f;
 
 
     // Start is called before the first frame update
@@ -50,8 +51,10 @@ public class GameManager : MonoBehaviour
     }
 
     void IncreaseDifficulty(){
-        platformSpeed += 0.3f;
-        cloudSpeed += 0.2f;
+        if(platformSpeed < speedLimit){
+            platformSpeed += 0.3f;
+            cloudSpeed += 0.2f;
+        }
         Debug.Log("GAMESPEED " + platformSpeed);
     }
 
