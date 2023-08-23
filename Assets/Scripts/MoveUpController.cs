@@ -26,9 +26,9 @@ public class MoveUpController : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(gameObject.tag);
+        // Debug.Log(gameObject.tag);
         if(gameObject.tag == "Platform"){
-            Debug.Log("its Platform");
+            // Debug.Log("its Platform");
             platformSpeed = GameManagerObj.GetComponent<GameManager>().platformSpeed;
         }
 
@@ -45,7 +45,7 @@ public class MoveUpController : MonoBehaviour
 
     void MoveUp(){
 
-        Debug.Log(platformSpeed);
+        // Debug.Log(platformSpeed);
         if(gameObject.CompareTag("Platform")){
             transform.Translate(Vector3.up * Time.deltaTime * platformSpeed);
         }

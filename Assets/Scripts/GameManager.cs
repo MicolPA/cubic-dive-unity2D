@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
     public GameObject canvaGameOver;
     public GameObject canvaPause;
     private int score = 0;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
         Time.timeScale = 1.0f;
         InvokeRepeating("IncreaseScore", 1, 1);
         InvokeRepeating("IncreaseDifficulty", 15, 15);
@@ -38,14 +41,18 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
+        if(score >= int.Parse(highScoreText.text)){
+            highScoreText.text = scoreText.text;
+            PlayerPrefs.SetInt("HighScore", int.Parse(scoreText.text));
+        }
+
     }
 
     void IncreaseScore(){
         
         if(!isGameOver){
             score = score + 1;
-            string scoreStr = score.ToString();
-            scoreText.text = scoreStr;
+            scoreText.text = score.ToString();
         }
 
     }
