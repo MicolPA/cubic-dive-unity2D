@@ -1325,7 +1325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 6.4548, y: -457}
+  m_AnchoredPosition: {x: 6.4548, y: -418}
   m_SizeDelta: {x: 334.7681, y: 352.43018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772499441
@@ -1393,7 +1393,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2272,20 +2272,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MUSIC
+  m_text: '
 
-    MARIACHIS
+    DEVELOP/DESIGN
 
-
-    ESTO
-
-    LOREM IPSU
+    MICOL PERALTA
 
 
-    LOREM
+    MUSIC
 
-    LOREM
-    IPSU'
+    B.G.M.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0711acfb3ca4fb847bad09c2f84ceeb7, type: 2}
   m_sharedMaterial: {fileID: -7066976518502475032, guid: 0711acfb3ca4fb847bad09c2f84ceeb7, type: 2}
@@ -2312,8 +2308,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120
-  m_fontSizeBase: 120
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

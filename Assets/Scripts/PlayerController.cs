@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool enabled;
+    // public bool enabled;
 
     public float xBound = 2.8f;
 
@@ -21,20 +21,18 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if(enabled == false){
-            FlipPlayerPos();
-        }
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Debug.Log("PRESSED");
-            // Debug.Log(gameObject.tag);
-            SoundEffect();
-        }
+        // if(enabled == false){
+        //     FlipPlayerPos();
+        // }
+        // if(Input.GetKeyDown(KeyCode.Space)){
+        //     Debug.Log("PRESSED");
+        //     // Debug.Log(gameObject.tag);
+        //     SoundEffect();
+        // }
         
     }
 
     void FlipPlayerPos(){
-
-        // Debug.Log(transform.position.x);
 
         if(transform.position.x > xBound){
             transform.position = new Vector2(-xBound, transform.position.y);
@@ -46,21 +44,16 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.collider.tag);
-        if(other.collider.tag == "Platform"){
+        Debug.Log("Collision");
+        Debug.Log(other.tag);
+        if(other.tag == "Platform"){
             audioSource.PlayOneShot(dropSound);
 
         }
     }
 
-    public void SoundEffect(){
-
-        
-
-    }
-
-   
    
 }

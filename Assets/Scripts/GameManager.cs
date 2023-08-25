@@ -24,10 +24,16 @@ public class GameManager : MonoBehaviour
     public float speedLimit = 2.5f;
 
 
+    public AudioSource audioSource;
+    public AudioClip ambientSound;
+    public AudioClip gameOverSound;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource.volume = 0.1f;
+        audioSource.Play();
         highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
         Time.timeScale = 1.0f;
         InvokeRepeating("IncreaseScore", 1, 1);
@@ -37,8 +43,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.y >= 5 || player.transform.position.y <= -3){
-            GameOver();
+        if(!isGameOver){
+
+            if(player.transform.position.y >= 5 || player.transform.position.y <= -3){
+                GameOver();
+            }
+
         }
 
         if(score >= int.Parse(highScoreText.text)){
@@ -62,7 +72,6 @@ public class GameManager : MonoBehaviour
             platformSpeed += 0.3f;
             cloudSpeed += 0.2f;
         }
-        Debug.Log("GAMESPEED " + platformSpeed);
     }
 
 
@@ -75,17 +84,21 @@ public class GameManager : MonoBehaviour
     void GameOver(){
 
         isGameOver = true;
+        audioSource.Stop ();
+        audioSource.PlayOneShot(gameOverSound);
         Time.timeScale = 0;
         canvaGameOver.SetActive(true);
     }
 
     public void PauseGame(){
         Time.timeScale = 0;
+        audioSource.Pause();
         canvaPause.SetActive(true);
     }
 
     public void ResumeGame(){
         Time.timeScale = 1.0f;
+        audioSource.Play();
         canvaPause.SetActive(false);
     }
 
