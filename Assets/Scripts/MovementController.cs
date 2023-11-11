@@ -46,9 +46,9 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate(){
         // Debug.Log(Input.GetAxis("Horizontal"));
-		#if UNITY_EDITOR
+		// #if UNITY_EDITOR
 		RunCharacter(Input.GetAxis("Horizontal"));
-		#endif
+		// #endif
 	}
 
 	private void RunCharacter(float horizontalInput){
